@@ -1,0 +1,103 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        width: 700px;   /* bigger card */
+        max-width: 90%; /
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      input:focus {
+        border-color: #74ebd5;
+        box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        background: #74ebd5;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #4facfe;
+      }
+
+      canvas {
+        margin-top: 20px;
+      }
+
+      .weather-info {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="container">
+    <h2>🌤 Weather App</h2>
+
+    <div class="input-group">
+      <input type="text" id="city" placeholder="Enter City">
+      <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="weather-info" id="weatherInfo"></div>
+
+    <canvas id="weatherChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+
+  </body>
+  </html>
